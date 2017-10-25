@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Great Race!</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  </head>
+  <body>
+
+    <div id="app">
+        <img src="player1.png" alt="Player 1" width="200px" height="200px" class="DkS2">
+        <img src="player2.png" alt="Player 2" width="200px" height="200px" class="DkS1">
+        <img src="bonfire.png" alt="Bonfire" class="Bonfire">
+        <img v-bind:src="buttonImage" id="start" alt="Flask" width="250px" height="250px" class="EFlask MFlask img-rounded" v-on:click="startRace">
+    </div>
+
+    <script src="https://unpkg.com/vue@2.5.2/dist/vue.js"></script>
+     <script src="script.js"></script> 
+  </body>
+</html>

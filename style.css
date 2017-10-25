@@ -1,0 +1,31 @@
+body, html {
+    height: 100%;
+    /* The image used */
+    background-image: url("raceway.png");
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.DkS1 {
+    position: absolute;
+    bottom: 35vh;
+    left: 0;
+}
+.DkS2 {
+    position: absolute;
+    bottom: 10vh;
+    left: 0;
+}
+.EFlask {
+    position: absolute;
+}
+.MFlask {
+    position: absolute;
+}
+.Bonfire {
+    position: absolute;
+    bottom: 20vh;
+    right: 10px;
+}
