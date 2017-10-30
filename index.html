@@ -14,10 +14,11 @@
   <body>
 
     <div id="app">
-        <img src="player1.png" alt="Player 1" width="200px" height="200px" class="DkS2">
-        <img src="player2.png" alt="Player 2" width="200px" height="200px" class="DkS1">
+        <img src="player1.png" alt="Player 1" class="DkS1" id="p1" :style="player1Position">
+        <img src="player2.png" alt="Player 2" class="DkS2" id="p2" :style="player2Position">
         <img src="bonfire.png" alt="Bonfire" class="Bonfire">
         <img v-bind:src="buttonImage" id="start" alt="Flask" width="250px" height="250px" class="EFlask MFlask img-rounded" v-on:click="startRace">
+        <img v-bind:src="winnerImage" alt="" class="WkS1">
     </div>
 
     <script src="https://unpkg.com/vue@2.5.2/dist/vue.js"></script>
