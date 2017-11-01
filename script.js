@@ -1,6 +1,7 @@
 var vue = new Vue({
     el: "#app",
     data: {
+        race: true,
         racing: false,
         winner: 0,
         p1Move : 0,
@@ -11,12 +12,16 @@ var vue = new Vue({
     },
     methods: {
         startRace() {
-            this.awesomeDude = 0;
-            this.racing = true;
-            this.moving = true;
-            this.p1Move = 0;
-            this.p2Move = 0;
-            this.interval = setInterval(this.move, 200);
+            if (this.race) {
+                this.race = false;
+                this.awesomeDude = 0;
+                this.racing = true;
+                this.moving = true;
+                this.p1Move = 0;
+                this.p2Move = 0;
+                this.interval = setInterval(this.move, 200);
+            }
+            else return;
         } ,
         move() {
             this.checkWinner();
@@ -31,22 +36,22 @@ var vue = new Vue({
                 clearInterval(this.interval);
                 this.player1Win();
                 this.moving = false;
+                this.race = true;
             }
             else if (this.p2Move >= 85 && this.p2Move > this.p1Move) {
                 clearInterval(this.interval);
                 this.player2Win();
                 this.moving = false;
+                this.race = true;
             }
         } ,
         player1Win() {
             this.awesomeDude = 1;
             this.racing = false;
-            alert("Player 1 wins!");
         } ,
         player2Win() {
             this.awesomeDude = 2;
             this.racing = false;
-            alert("Player 2 wins!");
         }
     },
     computed: {
@@ -58,6 +63,18 @@ var vue = new Vue({
                 return "player1.png";
             else if (this.awesomeDude == 2)
                 return "player2.png";
+            else {
+                return "imageholder.png";
+            }
+        },
+        playerImage() {
+            if (this.awesomeDude == 1)
+                return "player-1-wins.png";
+            else if (this.awesomeDude == 2)
+                return "player-2-wins.png";
+            else {
+                return "imageholder.png";
+            }
         },
         player1Position() {
             return {
